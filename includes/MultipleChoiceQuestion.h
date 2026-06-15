@@ -9,7 +9,7 @@
 class MultipleChoiceQuestion : public Question {
 public:
     //Constructor and Deconstructor
-    MultipleChoiceQuestion(std::string &name, int pointValue);
+    MultipleChoiceQuestion(const std::string &name, int pointValue);
     ~MultipleChoiceQuestion() override = default;
 
     //Functions
