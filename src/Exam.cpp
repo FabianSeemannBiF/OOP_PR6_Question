@@ -1,4 +1,4 @@
-#include "Exam.h"
+#include "../includes/Exam.h"
 
 Exam::Exam(){
     this->currentQuestionIndex = 0;
