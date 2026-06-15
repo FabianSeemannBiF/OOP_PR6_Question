@@ -12,4 +12,5 @@ add_executable(OOP_PR6_Question
         src/Question.cpp
         main.cpp
         includes/SingleChoiceQuestion.h
-        includes/MultipleChoiceQuestion.h)
+        includes/MultipleChoiceQuestion.h
+        src/SingleChoiceQuestion.cpp)

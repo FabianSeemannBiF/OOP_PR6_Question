@@ -1,4 +1,4 @@
-#include "Question.h"
+#include "../includes/Question.h"
 #include <iostream>
 
 Question::Question(const std::string &name, const int pointValue){
@@ -18,5 +18,6 @@ void Question::addAnswer(const std::string &answerName, const bool isCorrect) {
     Answer answer;
     answer.name = answerName;
     answer.isCorrect = isCorrect;
+    answer.isSelected = false;
     this->answers.push_back(answer);
 }

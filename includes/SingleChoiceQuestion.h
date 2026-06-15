@@ -9,7 +9,7 @@
 class SingleChoiceQuestion : public Question {
 public:
     //Constructor and Deconstructor
-    SingleChoiceQuestion();
+    SingleChoiceQuestion(const std::string &name, int pointValue);
     ~SingleChoiceQuestion() override = default;
 
     //Functions

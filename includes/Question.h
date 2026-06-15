@@ -6,6 +6,7 @@
 struct Answer {
     std::string name;
     bool isCorrect;
+    bool isSelected;
 };
 
 class Question {
@@ -21,11 +22,11 @@ public:
 
     //Getters
     virtual int getPoints() = 0;
-
+protected:
+    std::vector<Answer> answers;
+    int pointValue;
 private:
     std::string name;
-    int pointValue;
-    std::vector<Answer> answers;
 };
 
 #endif // QUESTION_H
