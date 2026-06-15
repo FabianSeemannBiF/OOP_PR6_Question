@@ -4,16 +4,21 @@
 #include "Question.h"
 
 
-class Exam{
-    public:
-        Exam();
-        ~Exam();
-        Question* getCurrentQuestion();
-        void addQuestion(Question* newQuestion);
-        void nextQuestion();
+class Exam {
+public:
+    //Constructor and Deconstructor
+    Exam();
+    ~Exam();
 
-    private:
-        std::vector<Question*> questions;
+    //Functions
+    Question *getCurrentQuestion() const;
+    void addQuestion(Question *newQuestion);
+    void nextQuestion();
+    int grade() const;
+
+private:
+    std::vector<Question *> questions;
+    int currentQuestionIndex;
 };
 
 #endif // EXAM_H

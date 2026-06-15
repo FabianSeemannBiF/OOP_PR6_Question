@@ -1,20 +1,21 @@
 #include "Exam.h"
 
 Exam::Exam(){
-    //ctor
+    this->currentQuestionIndex = 0;
 }
 
 Exam::~Exam(){
-    //dtor
+    for (Question* question : this->questions) {
+        delete question;
+    }
+    this->questions.clear();
 }
 
-Question* Exam::getCurrentQuestion(){
-    if(questions.empty()){
+Question* Exam::getCurrentQuestion() const {
+    if (this->currentQuestionIndex < 0 || this->currentQuestionIndex >= this->questions.size()) {
         return nullptr;
     }
-    else{
-        return questions[0];
-    }
+    return questions[this->currentQuestionIndex];
 }
 
 void Exam::addQuestion(Question* newQuestion){
@@ -23,5 +24,15 @@ void Exam::addQuestion(Question* newQuestion){
 
 
 void Exam::nextQuestion(){
-    //TBI
+    this->currentQuestionIndex++;
+}
+
+int Exam::grade() const {
+    int totalPoints = 0;
+    for (Question* question : questions) {
+        if (question != nullptr) {
+            totalPoints += question->getPoints();
+        }
+    }
+    return totalPoints;
 }
